@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("./partials/head.ejs") %>
+        <title>signup</title>
+</head>
+
+<body>
+    <%- include("./partials/nav.ejs") %>
+
+        <div class="container mt-5">
+            <h1>Sign Up</h1>
+            <p class="lead">Create a new account</p>
+            <hr>
+            <p class="text-muted">Please fill in the form below to create a new account.</p>
+            <p class="text-muted">Already have an account? <a href="/user/signin">Login here</a>.</p>
+            <hr>
+            <form action = "/user/signup" method="post">
+                <div class="mb-3">
+                    <label for="fullName" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="fullName" name="fullName" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Create Account</button>
+            </form>
+        </div>
+
+        <%- include("./partials/scripts.ejs") %>
+</body>
+
+</html>
