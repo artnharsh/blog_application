@@ -1,6 +1,6 @@
 const JWT = require('jsonwebtoken');
 
-const secret = "!@bloomApp@#217";
+const secret = your_secrete_key;
 
 function createTokenForUser(user) {
     const payload = {
