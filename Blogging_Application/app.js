@@ -12,14 +12,14 @@ const { checkForAuthenticationCookie } = require("./middlewares/authentication")
 
 const app = express();
 
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT;
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(checkForAuthenticationCookie("token"));
 app.use(express.static(path.resolve("./public")));
 
-mongoose.connect(process.env.MONGO_URL || "mongodb://localhost:27017/bloom")
+mongoose.connect(process.env.MONGO_URL)
     .then(() => console.log("MongoDB connected: Bloom"))
     .catch((err) => console.error("MongoDB connection error:", err));
 
